@@ -1,0 +1,68 @@
+name: Validate docs against the site
+
+# Org-shared reusable workflow. Component repos (fiberpath, future repos) call
+# it to validate their docs/ against the documentation site's MkDocs config on
+# every PR — without holding any MkDocs config themselves. One-liner in a
+# component repo:
+#
+#   jobs:
+#     docs:
+#       uses: fiberpath/.github/.github/workflows/docs-validate.yml@main
+#       with:
+#         section: fiberpath
+#         gui_docs_path: fiberpath_gui/docs   # optional
+#
+# A reusable workflow runs in the CALLER's context, so the default checkout
+# pulls the caller's repo at the PR ref. The site repo (which owns the MkDocs
+# config) is checked out explicitly for the build.
+
+on:
+  workflow_call:
+    inputs:
+      section:
+        description: Section directory the component's docs are imported into (docs/<section>/).
+        required: true
+        type: string
+      gui_docs_path:
+        description: Optional second docs dir in the caller repo, folded in under <section>/gui/.
+        required: false
+        type: string
+        default: ""
+
+jobs:
+  validate:
+    name: Validate MkDocs build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout site config
+        uses: actions/checkout@v7
+        with:
+          repository: fiberpath/fiberpath.github.io
+          path: site
+
+      - name: Checkout caller docs
+        uses: actions/checkout@v7
+        with:
+          path: component
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install site dependencies
+        run: pip install -r site/requirements.txt
+
+      - name: Import caller docs
+        run: |
+          dest="site/docs/${{ inputs.section }}"
+          rm -rf "$dest" && mkdir -p "$dest"
+          cp -R component/docs/. "$dest/"
+          if [ -n "${{ inputs.gui_docs_path }}" ]; then
+            mkdir -p "$dest/gui"
+            cp -R "component/${{ inputs.gui_docs_path }}/." "$dest/gui/"
+          fi
+
+      - name: Build (strict)
+        working-directory: site
+        run: mkdocs build --strict
