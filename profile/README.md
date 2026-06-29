@@ -1,4 +1,9 @@
-# FiberPath
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/fiberpath/.github/main/brand/lockup-horizontal-reversed.png">
+    <img alt="FiberPath" src="https://raw.githubusercontent.com/fiberpath/.github/main/brand/lockup-horizontal.png" width="460">
+  </picture>
+</div>
 
 **An open, machine-agnostic filament-winding path planner.**
 
