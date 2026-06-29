@@ -24,8 +24,8 @@ detail, which takes precedence.
 ## Project-specific guides
 
 - **`fiberpath`** (core software): see the
-  [Contributing guide](https://fiberpath.github.io/fiberpath/development/contributing/)
-  and [Tooling](https://fiberpath.github.io/fiberpath/development/tooling/) docs.
+  [Contributing guide](https://fiberpath.org/fiberpath/development/contributing/)
+  and [Tooling](https://fiberpath.org/fiberpath/development/tooling/) docs.
 
 By contributing, you agree that your contributions are licensed under the same
 license as the repository you are contributing to.

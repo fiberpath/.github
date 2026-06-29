@@ -2,7 +2,7 @@
 
 Need help with FiberPath?
 
-- 📖 **Documentation:** <https://fiberpath.github.io/fiberpath> — start here
+- 📖 **Documentation:** <https://fiberpath.org/fiberpath> — start here
   (getting started, guides, troubleshooting).
 - 🐞 **Bugs:** open an issue on the relevant repository with steps to reproduce.
 - 💡 **Feature ideas:** open a feature-request issue describing the use case.

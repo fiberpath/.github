@@ -14,9 +14,9 @@ winder to a documented compatibility contract and drive it with FiberPath.
 
 ## Where to start
 
-- 📖 **Documentation:** <https://fiberpath.github.io/fiberpath>
+- 📖 **Documentation:** <https://fiberpath.org/fiberpath>
 - 🧩 **Core software:** [`fiberpath`](https://github.com/fiberpath/fiberpath) — planner, CLI, API, and desktop GUI
-- 🗺️ **Roadmap:** [development/roadmap](https://fiberpath.github.io/fiberpath/development/roadmap/)
+- 🗺️ **Roadmap:** [development/roadmap](https://fiberpath.org/fiberpath/development/roadmap/)
 
 ## Repositories
 
