@@ -9,6 +9,20 @@ Mono, single ink **`#090909`**. All SVGs have outlined text (no font
 dependency). Transparent variants have no background and the cylinder mouth is
 open (transparent). Prefer SVG; the PNGs are 1024/1600/2400 px raster masters.
 
+## Concept
+
+The mark shows a winding program becoming a wound part. Read left to right:
+
+- **Binary** (`01100101`): the digital winding definition.
+- **Bars** that run into the strand: the same data as an ordered machine program.
+- **One strand** that sweeps up and narrows in perspective to the weight of a
+  single wrap: the toolpath becoming the tow being laid.
+- **A helically wound mandrel**: the part.
+
+The binary turns *into* the fibre; it is not a label beside a fibre graphic.
+Edits should keep that one continuous form, and keep the mark specific to
+filament winding rather than a generic screen, spool or gear.
+
 ## Files
 
 | Asset | Variants | Use |
